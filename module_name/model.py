@@ -1,7 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import inspect
+import inspect, settings, logging
+
+logger = logging.getLogger(settings.PROG_NAME)
 
 class Finding:
     """
@@ -15,17 +17,17 @@ class Finding:
     @property
     def x(self):
         """I'm the 'x' property."""
-        print("getter of x called")
+        logger.debug("getter of x called")
         return self._x
 
     @x.setter
     def x(self, value):
-        print("setter of x called")
+        logger.debug("setter of x called")
         self._x = value
 
     @x.deleter
     def x(self):
-        print("deleter of x called")
+        logger.debug("deleter of x called")
         del(self._x)
 
     def __str__(self):
@@ -34,7 +36,7 @@ class Finding:
 
 class LockedClass(object):
     """
-    implements locked class where gets and sets are only possible through public methods and auditable
+    implements locked class where gets and sets are only reachable through public methods and provides auditability
     """
 
     __slots__ = ['balance', 'account_type']
@@ -45,10 +47,10 @@ class LockedClass(object):
 
     def __setattr__(self, name, val):
         super(LockedClass, self).__setattr__(name, val)
-        print("[!]", name, "set to", val)  # use proper logging facility
+        logger.debug("[!]", name, "set to", val)
 
     def __getattribute__(self, name):
-        print("[!]", name, "called from", \
+        logger.debug("[!]", name, "called from", \
             inspect.getouterframes(inspect.currentframe())[1][1:4])
 
         # use proper logging facility

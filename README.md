@@ -1,5 +1,5 @@
-# Python Project Skeleton
-This is a starting point for python projects that I use. Whilst opinionated, this is a simple code structure that can be used to bootstrap Python projects.
+# Python Skeleton Project
+This is a starting point for python projects that I use. Whilst opinionated, this is a simple code structure that can be used to bootstrap many different Python projects.
 
 Written for Python 2 but should work with 3
 
@@ -26,3 +26,4 @@ Things that I do not like about it:
 * Logging - it would be nice to somehow move logging initialisation code somewhere else outside of the main script so it could go straight into the main logic
 * Test PATH manipulation - whilst i want tests to be on a separate folder and outside of the package itself, they need access to the functions to be tested which means that each file needs to have python's PATH updated. An alternative wo
 ld be to add it manually on your IDE
+* having to update version twice for each release (in main script and in setup.py)

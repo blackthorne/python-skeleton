@@ -22,8 +22,13 @@ Options:
 ####################################################################################################
 # program initialisation
 
+__author__ = 'Francisco Ribeiro <francisco@ironik.org>'
+__version__ = '0.1'
+
 from docopt import docopt
+from model import LockedClass # rename accordingly
 import sys, os, logging, settings
+
 
 # logging
 logger = logging.getLogger(settings.PROG_NAME)
