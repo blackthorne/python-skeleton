@@ -37,10 +37,10 @@ logger = logging.getLogger(settings.PROG_NAME)
 handler = logging.FileHandler(os.path.join(settings.logs_folder, '%s.log' % settings.PROG_NAME))
 console_handler = logging.StreamHandler()
 
-if(settings.LOGGING_VERBOSITY == 'DEBUG'):
-    logger.setLevel(logging.DEBUG)
-    handler.setLevel(logging.DEBUG)
-    console_handler.setLevel(logging.DEBUG)
+# setting right level of logging verbosity
+logger.setLevel(settings.LOGGING_VERBOSITY)
+handler.setLevel(settings.LOGGING_VERBOSITY)
+console_handler.setLevel(settings.LOGGING_VERBOSITY)
 
 # create a logging format                                                                                                                       
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')

@@ -3,9 +3,9 @@
 #
 # Settings
 ####################################################################################################
-import os
+import os, logging
 
-LOGGING_VERBOSITY = 'DEBUG'
+LOGGING_VERBOSITY = logging.DEBUG
 PROG_NAME = os.path.basename(os.path.dirname(__file__))
 
 # folder locations

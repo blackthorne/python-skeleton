@@ -1,4 +1,6 @@
-# dummy code to test tests integration and IDE -- delete
+# dummy code to test my own tests integration and IDE
+# delete this file
+
 import hashlib
 
 secrets_db = """john,a51dda7c7ff50b61eaea0444371f4a6a9301e501
