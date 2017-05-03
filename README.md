@@ -19,12 +19,14 @@ Features:
 * LICENSE file included (Apache v2.0)
 * packaging files (requirements.txt, setup.py, __init__.py)
 * Makefile (init, test, clean)
+* main logic separate from program initilization (__main__.py)
+* separate locations for both program data and logs
 * does not rely on IDE customisations to work
 * .gitignore file
 
 Things that I do not like about it:
-* Logging - it would be nice to somehow move logging initialisation code somewhere else outside of the main script so it could go straight into the main logic
-* Test PATH manipulation - whilst i want tests to be on a separate folder and outside of the package itself, they need access to the functions to be tested which means that each file needs to have python's PATH updated. An alternative would be to add it manually on your IDE
+* ~~Logging - it would be nice to somehow move logging initialisation code somewhere else outside of the main script so it could go straight into the main logic~~ - done, __main__.py is now used to initialize project, main logic goes to <module_name>.py
+* Test PATH manipulation - whilst I want tests to be on a separate folder and outside of the package itself, they need access to the functions to be tested which means that each file needs to have python's PATH updated. An alternative would be to add it manually on your IDE
 * having to update version twice for each release (in main script and in setup.py)
 
 You can install this project as is with:
