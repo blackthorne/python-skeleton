@@ -30,11 +30,11 @@ Things that I do not like about it:
 * ~~having to update version twice for each release (in main script and in setup.py)~~ - done, use _make_
 
 Instructions:
-# start your project by filling setup.py
-# run _make_ from within the project folder (you can update your program at anytime by running it again)
-# update docstring within the module_name/__main__.py file
-# review the remaining files within that folder
-# rename module_name.py file to your preferred program name and kick off!
+1. start your project by filling setup.py
+1. run _make_ from within the project folder (you can update your program at anytime by running it again)
+1. update docstring within the module_name/__main__.py file
+1. review the remaining files within that folder
+1. rename module_name.py file to your preferred program name and kick off!
 
 You can install this project as is with:
 ```
