@@ -28,6 +28,7 @@ Status: **stable**
 * ~~Logging - it would be nice to somehow move logging initialisation code somewhere else outside of the main script so it could go straight into the main logic~~ - done, __main__.py is now used to initialize project, main logic goes to <module_name>.py
 * Test PATH manipulation - whilst I want tests to be on a separate folder and outside of the package itself, they need access to the functions to be tested which means that each file needs to have python's PATH updated. An alternative would be to add it manually on your IDE
 * ~~having to update version twice for each release (in main script and in setup.py)~~ - done, use _make_
+* probably I should stop using Makefile and move its functionality onto a custom setup.py
 
 ### Instructions:
 1. start your project by filling setup.py
@@ -38,12 +39,12 @@ Status: **stable**
 1. before your first commit, review README.me (this file) and updated your tests/
 
 ### _Make_ targets:
-* setup (default) - updates author, version and project_name settings in your project
-* dist - builds a tar.gz (in dist/) with code and other files relevant for distribution such as LICENSE and README files
-* deps - installs dependencies (according to requirements.txt)
-* tests - runs tests
-* clean - deletes .pyc files as well as all logs and tests metadata
-* install - installs package
+* __setup__ (default) - updates author, version and project_name settings in your project
+* __dist__ - builds a tar.gz (in dist/) with code and other files relevant for distribution such as LICENSE and README files
+* __deps__ - installs dependencies (according to requirements.txt)
+* __tests__ - runs tests
+* __clean__ - deletes .pyc files as well as all logs and tests metadata
+* __install__ - installs package
 * also refer to setup.py for more options
 
 ### Installation:
