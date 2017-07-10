@@ -9,16 +9,16 @@ current_project_dir=`find . -maxdepth 2 -name __init__.py -print0 | xargs -0 -n1
 
 setup:
 ifdef name
-	@echo "Naming project '$(name)' ..."
-	@if [ ! -d "$(name)" ]; then mv "$(current_project_dir)" "$(name)"; fi
+	@echo "Naming project '$(strip $(name))' ..."
+	@if [ ! -d "$(strip $(name))" ]; then mv "$(strip $(current_project_dir))" "$(strip $(name))"; fi
 endif
 ifdef version
-	@echo "Updating version to v$(version) ..."
-	@sed -E -i '' "s/__version__ = '[^\']*'/__version__ = '$(version)'/" "$(name)/__main__.py"
+	@echo "Updating version to v$(strip $(version)) ..."
+	@sed -E -i '' "s/__version__ = '[^\']*'/__version__ = '$(strip $(version))'/" "$(strip $(name))/__main__.py"
 endif
 ifdef author
-	@echo "Updating author to '$(author)' ..."
-	@sed -E -i '' "s/__author__ = '[^\']*'/__author__ = '$(author) <$(author_email)>'/" "$(name)/__main__.py"
+	@echo "Updating author to '$(strip $(author))' ..."
+	@sed -E -i '' "s/__author__ = '[^\']*'/__author__ = '$(strip $(author)) <$(strip $(author_email))>'/" "$(strip $(name))/__main__.py"
 endif
 
 dist:
