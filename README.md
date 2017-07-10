@@ -17,15 +17,15 @@ Status: **stable**
 * models with customised classes on separate file (model.py)
 * command line argument parsing from help message in docstring (docopt)
 * LICENSE file included (Apache v2.0)
-* packaging files (requirements.txt, setup.py, __init__.py)
+* packaging files (requirements.txt, setup.py, \_\_init\_\_.py)
 * Makefile (init, test, clean)
-* main logic separate from program initilization (__main__.py)
+* main logic separate from program initilization (\_\_main\_\_.py)
 * separate locations for both program data and logs
 * does not rely on IDE customisations to work
 * .gitignore file
 
 ### Things that I do not like about it:
-* ~~Logging - it would be nice to somehow move logging initialisation code somewhere else outside of the main script so it could go straight into the main logic~~ - done, __main__.py is now used to initialize project, main logic goes to <module_name>.py
+* ~~Logging - it would be nice to somehow move logging initialisation code somewhere else outside of the main script so it could go straight into the main logic~~ - done, \_\_main\_\_.py is now used to initialize project, main logic goes to <module_name>.py
 * Test PATH manipulation - whilst I want tests to be on a separate folder and outside of the package itself, they need access to the functions to be tested which means that each file needs to have python's PATH updated. An alternative would be to add it manually on your IDE
 * ~~having to update version twice for each release (in main script and in setup.py)~~ - done, use _make_
 * probably I should stop using Makefile and move its functionality onto a custom setup.py
@@ -33,7 +33,7 @@ Status: **stable**
 ### Instructions:
 1. start your project by filling setup.py
 1. run _make_ from within the project folder (you can update your program at anytime by running it again)
-1. update docstring within the module_name/__main__.py file
+1. update docstring within the module_name/\_\_main\_\_.py file
 1. review requirements.txt in the main project folder and the remaining files within the module folder
 1. rename module_name.py file to your preferred program name and kick off!
 1. before your first commit, review README.me (this file) and updated your tests/
