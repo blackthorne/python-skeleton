@@ -39,10 +39,12 @@ Status: **stable**
 
 ### _Make_ targets:
 * setup (default) - updates author, version and project_name settings in your project
-* dist - builds a tar.gz (in dist/) with code and other files relevant for distribution
+* dist - builds a tar.gz (in dist/) with code and other files relevant for distribution such as LICENSE and README files
 * deps - installs dependencies (according to requirements.txt)
 * tests - runs tests
 * clean - deletes .pyc files as well as all logs and tests metadata
+* install - installs package
+* also refer to setup.py options for more
 
 ### Installation:
 You can install this project _as is_ with:
