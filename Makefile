@@ -9,15 +9,15 @@ current_project_dir=`find . -maxdepth 2 -name __init__.py -print0 | xargs -0 -n1
 
 setup:
 ifdef name
-	@echo "Naming project '$(name)'..."
+	@echo "Naming project '$(name)' ..."
 	@if [ ! -d "$(name)" ]; then mv "$(current_project_dir)" "$(name)"; fi
 endif
 ifdef version
-	@echo "Updating version to v$(version)..."
+	@echo "Updating version to v$(version) ..."
 	@sed -E -i '' "s/__version__ = '[^\']*'/__version__ = '$(version)'/" "$(name)/__main__.py"
 endif
 ifdef author
-	@echo "Updating author to '$(author)'..."
+	@echo "Updating author to '$(author)' ..."
 	@sed -E -i '' "s/__author__ = '[^\']*'/__author__ = '$(author) <$(author_email)>'/" "$(name)/__main__.py"
 endif
 

@@ -44,7 +44,7 @@ Status: **stable**
 * tests - runs tests
 * clean - deletes .pyc files as well as all logs and tests metadata
 * install - installs package
-* also refer to setup.py options for more
+* also refer to setup.py for more options
 
 ### Installation:
 You can install this project _as is_ with:
