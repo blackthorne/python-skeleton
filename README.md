@@ -27,7 +27,14 @@ Features:
 Things that I do not like about it:
 * ~~Logging - it would be nice to somehow move logging initialisation code somewhere else outside of the main script so it could go straight into the main logic~~ - done, __main__.py is now used to initialize project, main logic goes to <module_name>.py
 * Test PATH manipulation - whilst I want tests to be on a separate folder and outside of the package itself, they need access to the functions to be tested which means that each file needs to have python's PATH updated. An alternative would be to add it manually on your IDE
-* having to update version twice for each release (in main script and in setup.py)
+* ~~having to update version twice for each release (in main script and in setup.py)~~ - done, use _make_
+
+Instructions:
+# start your project by filling setup.py
+# run _make_ from within the project folder (you can update your program at anytime by running it again)
+# update docstring within the module_name/__main__.py file
+# review the remaining files within that folder
+# rename module_name.py file to your preferred program name and kick off!
 
 You can install this project as is with:
 ```
