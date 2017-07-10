@@ -7,7 +7,7 @@ Requirements: **hypothesis, docopt** (optional)
 
 Status: **stable**
 
-Features:
+### Features:
 * suitable for both Python v2 and v3
 * initializes logging for both terminal and file logs
 * simplistic DEBUG mode to tune logging verbosity
@@ -24,19 +24,29 @@ Features:
 * does not rely on IDE customisations to work
 * .gitignore file
 
-Things that I do not like about it:
+### Things that I do not like about it:
 * ~~Logging - it would be nice to somehow move logging initialisation code somewhere else outside of the main script so it could go straight into the main logic~~ - done, __main__.py is now used to initialize project, main logic goes to <module_name>.py
 * Test PATH manipulation - whilst I want tests to be on a separate folder and outside of the package itself, they need access to the functions to be tested which means that each file needs to have python's PATH updated. An alternative would be to add it manually on your IDE
 * ~~having to update version twice for each release (in main script and in setup.py)~~ - done, use _make_
 
-Instructions:
+### Instructions:
 1. start your project by filling setup.py
 1. run _make_ from within the project folder (you can update your program at anytime by running it again)
 1. update docstring within the module_name/__main__.py file
-1. review the remaining files within that folder
+1. review requirements.txt in the main project folder and the remaining files within the module folder
 1. rename module_name.py file to your preferred program name and kick off!
+1. before your first commit, review README.me (this file) and updated your tests/
 
-You can install this project as is with:
+### _Make_ targets:
+* setup (default) - updates author, version and project_name settings in your project
+* dist - builds a tar.gz (in dist/) with code and other files relevant for distribution
+* deps - installs dependencies (according to requirements.txt)
+* tests - runs tests
+* clean - deletes .pyc files as well as all logs and tests metadata
+
+### Installation:
+You can install this project _as is_ with:
+
 ```
 $ pip install . --user
 ```

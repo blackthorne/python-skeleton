@@ -15,13 +15,15 @@ endif
 ifdef version
 	@echo "Updating version to v$(version)..."
 	@sed -E -i '' "s/__version__ = '[^\']*'/__version__ = '$(version)'/" "$(name)/__main__.py"
-#	sed -E -i '' "s/version='[^\']*',/version='$(version)',/" setup.py
 endif
 ifdef author
 	@echo "Updating author to '$(author)'..."
 	@sed -E -i '' "s/__author__ = '[^\']*'/__author__ = '$(author) <$(author_email)>'/" "$(name)/__main__.py"
-#	sed -E -i '' "s/author='[^\']*',/author='$(author)',/" setup.py
 endif
+
+dist:
+	mkdir -p dist
+	tar --exclude="./tests" --exclude="./data" --exclude="./logs" -zcvf dist/$(name)-$(version).tar.gz *
 
 deps:
 	@pip install -r requirements.txt
@@ -30,5 +32,4 @@ test:
 	@py.test tests
 
 clean:
-	@rm -r *.pyc logs/* tests/.hypothesis .hypothesis .cache
-#	sed -i '' -E "s/^PROJECT_NAME:=[^\n]*/PROJECT_NAME:=$(name)/" Makefile
+	@rm -rf *.pyc logs/* dist/ tests/.hypothesis .hypothesis .cache
