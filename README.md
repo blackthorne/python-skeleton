@@ -18,7 +18,7 @@ Status: **stable**
 * command line argument parsing from help message in docstring (docopt)
 * LICENSE file included (Apache v2.0)
 * packaging files (requirements.txt, setup.py, \_\_init\_\_.py)
-* Makefile (init, test, clean)
+* Makefile (setup, deps, tests, clean, install, dist)
 * main logic separate from program initilization (\_\_main\_\_.py)
 * separate locations for both program data and logs
 * does not rely on IDE customisations to work
@@ -43,7 +43,7 @@ Status: **stable**
 * __dist__ - builds a tar.gz (in dist/) with code and other files relevant for distribution such as LICENSE and README files
 * __deps__ - installs dependencies (according to requirements.txt)
 * __tests__ - runs tests
-* __clean__ - deletes .pyc files as well as all logs and tests metadata
+* __clean__ - deletes .pyc files as well as all logs and testing metadata
 * __install__ - installs package
 * also refer to setup.py for more options
 
