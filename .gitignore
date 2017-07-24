@@ -7,6 +7,7 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+bin/
 .Python
 env/
 build/
@@ -72,6 +73,8 @@ target/
 
 # pyenv
 .python-version
+pip-selfcheck.json
+include/
 
 # celery beat schedule file
 celerybeat-schedule
