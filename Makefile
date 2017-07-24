@@ -32,7 +32,7 @@ test:
 
 clean:
 	@rm -rf logs/* dist/ tests/.hypothesis .hypothesis .cache build/ .gitignore~ *.egg-info
-	@find . -type f -name '*~' -exec rm {} \;
-	@find . -type f -name '*.pyc' -exec rm {} \;
+	@find . \( -name \*.pyc -o -name \*.pyo -o -name *~ -o -name __pycache__ \) -prune -exec rm -rf {} +
+
 install:
 	python setup.py install
