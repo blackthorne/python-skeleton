@@ -25,7 +25,8 @@ __version__ = '0.1'
 
 from docopt import docopt
 from model import LockedClass # rename accordingly
-import sys, os, logging, settings
+from . import settings
+import sys, os, logging
 
 
 # logging

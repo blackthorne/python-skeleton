@@ -6,7 +6,6 @@ author=`grep author= setup.py |cut -d'=' -f2|cut -d',' -f1|tr -d \'` # equivalen
 author_email=`grep author_email= setup.py |cut -d'=' -f2|cut -d',' -f1|tr -d \'` # equivalent to `python setup.py --author-email`
 current_project_dir=`find . -maxdepth 2 -name __init__.py -print0 | xargs -0 -n1 dirname`
 
-
 setup:
 ifdef name
 	@echo "Naming project '$(strip $(name))' ..."
@@ -32,7 +31,8 @@ test:
 	@py.test tests
 
 clean:
-	@rm -rf *.pyc logs/* dist/ tests/.hypothesis .hypothesis .cache build/ .gitignore~ module_name.egg-info
-
+	@rm -rf logs/* dist/ tests/.hypothesis .hypothesis .cache build/ .gitignore~ *.egg-info
+	@find . -type f -name '*~' -exec rm {} \;
+	@find . -type f -name '*.pyc' -exec rm {} \;
 install:
 	python setup.py install
