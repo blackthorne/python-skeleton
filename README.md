@@ -53,3 +53,10 @@ You can install this project _as is_ with:
 ```
 $ pip install . --user
 ```
+
+### Debugging:
+You can debug python packages in pdb with:
+
+```
+python3 -mpdb $(python3 -c 'import runpy; print(runpy.__file__)') module_name
+```
