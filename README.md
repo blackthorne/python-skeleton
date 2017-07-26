@@ -31,6 +31,7 @@ Status: **stable**
 * Test PATH manipulation - whilst I want tests to be on a separate folder and outside of the package itself, they need access to the functions to be tested which means that each file needs to have python's PATH updated. An alternative would be to add it manually on your IDE
 * ~~having to update version twice for each release (in main script and in setup.py)~~ - done, use _make_
 * probably I should stop using Makefile and move its functionality onto a custom setup.py
+* having to replace module_name in different places, it could be automated
 
 ### Instructions:
 1. start your project by filling setup.py

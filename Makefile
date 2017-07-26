@@ -32,11 +32,11 @@ test:
 	@py.test tests
 
 clean:
-		@rm -rf logs/* dist/ tests/.hypothesis .hypothesis .cache build/ .gitignore~ *.egg-info
-		@find . \( -name \*.pyc -o -name \*.pyo -o -name *~ -o -name __pycache__ \) -prune -exec rm -rf {} +
+	@rm -rf logs/* dist/ tests/.hypothesis .hypothesis .cache build/ .gitignore~ *.egg-info
+	@find . \( -name \*.pyc -o -name \*.pyo -o -name *~ -o -name __pycache__ \) -prune -exec rm -rf {} +
 
 cleanall: clean
-		@rm -rf bin include lib pip-selfcheck.json pyvenv.cfg setuptools* .Python
+	@rm -rf bin include lib pip-selfcheck.json pyvenv.cfg setuptools* .Python
 
 install:
 	python setup.py install
