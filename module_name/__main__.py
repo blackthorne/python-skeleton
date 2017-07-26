@@ -59,6 +59,6 @@ def main():
     """Main entry point for the script"""
     pass
 
-if __name__ == '__main__':
+if __name__.endswith('__main__'):
     arguments = docopt(__doc__, version="%s v%s" % (settings.PROG_NAME.capitalize(), __version__))
     sys.exit(main())

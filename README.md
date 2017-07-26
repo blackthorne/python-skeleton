@@ -64,5 +64,5 @@ $ python run.py
 
 If you really want to debug the package wherever it got installed, you can go with:
 ```
-python -mpdb $(python -c 'import runpy; print(runpy.__file__)') module_name
+$ python -mpdb $(python -c 'import runpy; print(runpy.__file__)') module_name
 ```
