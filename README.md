@@ -22,6 +22,7 @@ Status: **stable**
 * main logic separate from program initilization (\_\_main\_\_.py)
 * separate locations for both program data and logs
 * does not rely on IDE customisations to work
+* can be executed as a script (see run.py) -- useful for debugging
 * .gitignore file
 
 ### Things that I do not like about it:
@@ -54,9 +55,14 @@ You can install this project _as is_ with:
 $ pip install . --user
 ```
 
-### Debugging:
-You can debug python packages in pdb with:
+### Executing this package as a script  / Debugging:
+You can execute the run.py script in the top folder and run this statically (not the installed version if any):
 
 ```
-python3 -mpdb $(python3 -c 'import runpy; print(runpy.__file__)') module_name
+$ python run.py
+```
+
+If you really want to debug the package wherever it got installed, you can go with:
+```
+python -mpdb $(python -c 'import runpy; print(runpy.__file__)') module_name
 ```
