@@ -12,17 +12,18 @@ Status: **stable**
 * initializes logging for both terminal and file logs
 * simplistic DEBUG mode to tune logging verbosity
 * includes bootstrap code for 2 different types of tests: unittests and property based (hypothesis)
-* test files can be invoked alltogether (nose, py.test) but can also be invoked separately
+* test files can be invoked altogether (nose, py.test) but can also be invoked separately
 * configuration settings on separate file (settings.py)
 * models with customised classes on separate file (model.py)
 * command line argument parsing from help message in docstring (docopt)
 * LICENSE file included (Apache v2.0)
 * packaging files (requirements.txt, setup.py, \_\_init\_\_.py)
-* Makefile (setup, deps, tests, clean, install, dist)
+* Makefile (setup, deps, tests, clean, install, cleanall, dist)
 * main logic separate from program initilization (\_\_main\_\_.py)
 * separate locations for both program data and logs
 * does not rely on IDE customisations to work
 * can be executed as a script (see run.py) -- useful for debugging
+* virtualenv friendly (_cleanall_ target to remove virtualenv files)
 * .gitignore file
 
 ### Things that I do not like about it:
@@ -37,7 +38,7 @@ Status: **stable**
 1. update docstring within the module_name/\_\_main\_\_.py file
 1. review requirements.txt in the main project folder and the remaining files within the module folder
 1. rename module_name.py file to your preferred program name and kick off!
-1. before your first commit, review README.me (this file) and updated your tests/
+1. before your first commit, review README.me (this file) and updated your tests
 
 ### _Make_ targets:
 * __setup__ (default) - updates author, version and project_name settings in your project
@@ -45,6 +46,7 @@ Status: **stable**
 * __deps__ - installs dependencies (according to requirements.txt)
 * __tests__ - runs tests
 * __clean__ - deletes .pyc files as well as all logs and testing metadata
+* __cleanall__ - does clean and also removes virtualenv files
 * __install__ - installs package
 * also refer to setup.py for more options
 
