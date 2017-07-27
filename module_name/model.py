@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import inspect, settings, logging
+import inspect, logging
+from . import settings
 
 logger = logging.getLogger(settings.PROG_NAME)
 
