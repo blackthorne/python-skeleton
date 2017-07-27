@@ -32,7 +32,7 @@ test:
 	@py.test tests
 
 clean:
-	@rm -rf logs/* dist/ tests/.hypothesis .hypothesis .cache build/ .gitignore~ *.egg-info
+	@rm -rf logs/* dist/ tests/.hypothesis .hypothesis .cache build/ *.egg-info
 	@find . \( -name \*.pyc -o -name \*.pyo -o -name *~ -o -name __pycache__ \) -prune -exec rm -rf {} +
 
 cleanall: clean

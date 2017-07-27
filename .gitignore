@@ -36,6 +36,10 @@ wheels/
 pip-log.txt
 pip-delete-this-directory.txt
 
+# Emacs
+\#*\#
+.\#*
+
 # Unit test / coverage reports
 htmlcov/
 .tox/
