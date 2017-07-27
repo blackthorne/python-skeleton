@@ -9,7 +9,7 @@ Usage:
   naval_fate.py mine (set|remove) <x> <y> [--moored|--drifting]
   naval_fate.py -h | --help
   naval_fate.py --version
-  
+
 Options:
   -h --help     Show this screen.
   --version     Show version.
@@ -28,6 +28,8 @@ from model import LockedClass # rename accordingly
 from . import settings
 import sys, os, logging
 
+# errors
+UNKNOWN_ERROR = -1
 
 # logging
 logger = logging.getLogger(settings.PROG_NAME)
@@ -41,23 +43,24 @@ logger.setLevel(settings.LOGGING_VERBOSITY)
 handler.setLevel(settings.LOGGING_VERBOSITY)
 console_handler.setLevel(settings.LOGGING_VERBOSITY)
 
-# create a logging format                                                                                                                       
+# create a logging format
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
 console_handler.setFormatter(formatter)
 
-# add the handlers to the logger                                                                                                                
+# add the handlers to the logger
 logger.addHandler(handler)
 logger.addHandler(console_handler)
 
 logger.info("%s started" % settings.PROG_NAME)
 
 ####################################################################################################
-# Program Logic
+# entry point
 
 def main():
     """Main entry point for the script"""
-    pass
+    from . import module_name
+    return UNKNOWN_ERROR
 
 if __name__.endswith('__main__'):
     arguments = docopt(__doc__, version="%s v%s" % (settings.PROG_NAME.capitalize(), __version__))
