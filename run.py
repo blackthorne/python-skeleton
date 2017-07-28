@@ -3,4 +3,5 @@
 ####################################################################################################
 
 import runpy
-runpy.run_module('module_name.__main__')
+    
+runpy.run_module('module_name')

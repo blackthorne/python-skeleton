@@ -1,70 +1,21 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 ####################################################################################################
-"""Project Name.
-Usage:
-  naval_fate.py
-  naval_fate.py ship new <name>...
-  naval_fate.py ship <name> move <x> <y> [--speed=<kn>]
-  naval_fate.py ship shoot <x> <y>
-  naval_fate.py mine (set|remove) <x> <y> [--moored|--drifting]
-  naval_fate.py -h | --help
-  naval_fate.py -v | --verbose
-  naval_fate.py --version
 
-Options:
-  -h --help     Show this screen.
-  -v --verbose  Verbose mode.
-  --version     Show version.
-  --speed=<kn>  Speed in knots [default: 10].
-  --moored      Moored (anchored) mine.
-  --drifting    Drifting mine.
-"""
-####################################################################################################
-# program initialisation
-
-__author__ = 'Francisco Ribeiro <francisco@ironik.org>'
-__version__ = '0.1'
-
-from docopt import docopt
-from model import LockedClass # rename accordingly
 from . import settings
-import sys, os, logging
+from __init__ import logger, arguments
 
-# errors
-UNKNOWN_ERROR = -1
+if __name__.endswith('__main__'): # running it as a script
+    logger.info("%s started" % settings.PROG_NAME)
 
-# logging
-logger = logging.getLogger(settings.PROG_NAME)
-
-# create a file handler
-handler = logging.FileHandler(os.path.join(settings.logs_folder, '%s.log' % settings.PROG_NAME))
-console_handler = logging.StreamHandler()
-
-# setting right level of logging verbosity
-logger.setLevel(settings.LOGGING_VERBOSITY)
-handler.setLevel(settings.LOGGING_VERBOSITY)
-console_handler.setLevel(settings.LOGGING_VERBOSITY)
-
-# create a logging format
-formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
-handler.setFormatter(formatter)
-console_handler.setFormatter(formatter)
-
-# add the handlers to the logger
-logger.addHandler(handler)
-logger.addHandler(console_handler)
-
-logger.info("%s started" % settings.PROG_NAME)
-
-####################################################################################################
-# entry point
-
-def main():
-    """Main entry point for the script"""
-    from . import module_name
-    return UNKNOWN_ERROR
-
-if __name__.endswith('__main__'):
-    arguments = docopt(__doc__, version="%s v%s" % (settings.PROG_NAME.capitalize(), __version__))
-    sys.exit(main())
+    if arguments['--shell']:
+        from model import *
+        try:
+            import IPython
+            IPython.embed()
+        except ImportError:
+            import code
+            code.interact(local=locals())
+    elif arguments['--debug']:
+        import pdb
+        pdb.set_trace()

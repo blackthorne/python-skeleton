@@ -3,7 +3,7 @@ This is a starting point for python projects that I use. Whilst opinionated, thi
 
 Written for Python 2 but should work with 3
 
-Requirements: **hypothesis, docopt** (optional)
+Requirements: **hypothesis, docopt, ipython** (optional)
 
 Status: **stable**
 
@@ -24,6 +24,7 @@ Status: **stable**
 * does not rely on IDE customisations to work
 * can be executed as a script (see run.py) -- useful for debugging
 * virtualenv friendly (_cleanall_ target to remove virtualenv files)
+* preloaded debug and ipython shell options with preloaded app's context (fallbacks to python console if ipython is not present)
 * .gitignore file
 
 ### Things that I do not like about it:
