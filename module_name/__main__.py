@@ -1,11 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+#
+# Project Name
+# Francisco Ribeiro <francisco@ironik.org>
 ####################################################################################################
 
 from . import settings
-from __init__ import logger, arguments
+from .__init__ import logger, arguments
 
-if __name__.endswith('__main__'): # running it as a script
+if __name__.endswith('__main__'):
     logger.info("%s started" % settings.PROG_NAME)
 
     if arguments['--shell']:
