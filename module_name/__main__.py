@@ -12,7 +12,7 @@ if __name__.endswith('__main__'):
     logger.info("%s started" % settings.PROG_NAME)
 
     if arguments['--shell']:
-        from model import *
+        from .model import *
         try:
             import IPython
             IPython.embed()

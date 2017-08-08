@@ -1,7 +1,7 @@
 # Python Skeleton Project
 This is a starting point for python projects that I use. Whilst opinionated, this is a simple code structure that can be used to bootstrap many different Python projects.
 
-Written for Python 2 but should work with 3
+Written for Python 3 but should work with 2 with minor changes
 
 Requirements: **hypothesis, docopt, ipython** (optional)
 
