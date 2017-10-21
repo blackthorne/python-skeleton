@@ -14,12 +14,13 @@ ifdef name
 endif
 ifdef version
 	@echo "Updating version to v$(strip $(version)) ..."
-	@sed -E -i '' "s/__version__ = '[^\']*'/__version__ = '$(strip $(version))'/" "$(strip $(name))/__main__.py"
+	@sed -E -i.bak "s/__version__ = '[^\']*'/__version__ = '$(strip $(version))'/" "$(strip $(name))/__main__.py"
 endif
 ifdef author
 	@echo "Updating author to '$(strip $(author))' ..."
-	@sed -E -i '' "s/__author__ = '[^\']*'/__author__ = '$(strip $(author)) <$(strip $(author_email))>'/" "$(strip $(name))/__main__.py"
+	@sed -E -i.bak "s/__author__ = '[^\']*'/__author__ = '$(strip $(author)) <$(strip $(author_email))>'/" "$(strip $(name))/__main__.py"
 endif
+	@rm -f *.bak
 
 dist:
 	mkdir -p dist
