@@ -43,6 +43,7 @@ import os, logging
 from .change_me import main
 
 logger = logging.getLogger(settings.PROG_NAME)
+
 if not logger.handlers:
 
     # create a file handler
